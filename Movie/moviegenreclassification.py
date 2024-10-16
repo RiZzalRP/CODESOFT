@@ -73,12 +73,12 @@ plt.xlabel('Number of Movies')
 plt.ylabel('Genre')
 plt.show()
 
-# 13. Visualization: Top 10 Unwatched Genres
+# 13. Visualization: Last 10 Watched Genres
 top_genres = train_data['GENRE'].value_counts().nsmallest(10).reset_index()
 top_genres.columns = ['Genre', 'Count']
 plt.figure(figsize=(10, 6))
 sns.barplot(x='Count', y='Genre', data=top_genres, palette='Blues')
-plt.title('Top 10 Unwatched Genres')
+plt.title('Last 10 Watched Genres')
 plt.xlabel('Number of Movies')
 plt.ylabel('Genre')
 plt.show()
