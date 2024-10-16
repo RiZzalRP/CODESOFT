@@ -14,6 +14,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import GridSearchCV
 
 # 2. Loading the Dataset
 title = ['ID', 'TITLE', 'GENRE', 'DESCRIPTION']
@@ -133,3 +134,21 @@ print(f"Cross-validation (5-fold): {cross_val_score(SVC_Model, X, Y, cv=5, scori
 # 23. Predicting Test Data Genres with Logistic Regression
 Text_Predction = Log_Reg.predict(X_test_Tfidf)
 print(Text_Predction)
+
+
+# 24. Hyperparameter Tuning for Logistic Regression using Grid Search
+param_grid = {
+    'C': [0.01, 0.1, 1, 10],
+    'solver': ['liblinear', 'lbfgs'],
+    'max_iter': [100, 200, 300]
+}
+
+
+log_reg = LogisticRegression()
+grid_search = GridSearchCV(estimator=log_reg, param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=2)
+
+grid_search.fit(X_train, Y_train)
+
+# 25. Optimal Hyperparameters and Best Accuracy from Grid Search
+print(f"Best parameters: {grid_search.best_params_}")
+print(f"Best accuracy: {grid_search.best_score_}")
