@@ -33,12 +33,12 @@ Accuracy, confusion matrix, and classification reports to assess performance.
 5-fold cross-validation for reliable evaluation.
 
 Results:
-Models performed well, with Random Forest and Gradient Boosting showing strong predictive power. 💪
+Models performed well, with Random Forest and Gradient Boosting showing strong predictive power. 
 This project highlights the importance of feature engineering, data cleaning, and model tuning for predicting customer behavior in the financial domain.
 
 Tools used: Python, sklearn, seaborn, plotly
 
-👉 Always excited to explore new ways to improve model performance and customer insights!
+Always excited to explore new ways to improve model performance and customer insights!
 
 
 
